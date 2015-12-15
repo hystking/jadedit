@@ -1,0 +1,25 @@
+{
+  "name": "jadedit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-packager . jadedit --platform darwin --arch x64 --version 0.36.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "brace": "^0.7.0",
+    "electron-packager": "^5.1.1",
+    "electron-prebuilt": "^0.36.0",
+    "jade": "^1.11.0",
+    "node-jsx": "^0.13.3",
+    "react": "^0.14.0",
+    "react-ace": "^2.8.0",
+    "react-dom": "^0.14.3",
+    "redux": "^3.0.5",
+    "require-dir": "^0.3.0"
+  }
+}

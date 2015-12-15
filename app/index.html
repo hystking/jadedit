@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jadedit</title>
+    <link href="css/photon.css" rel="stylesheet"/>
+    <link href="css/jadedit.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div id="root">
+    </div>
+  </body>
+  <script>
+  const v8 = require("v8");
+  v8.setFlagsFromString("--harmony_destructuring");
+  require("node-jsx").install({extension: ".jsx"});
+
+  const createElement = require("react").createElement;
+  const render = require("react-dom").render;
+  const ipcRenderer = require('electron').ipcRenderer;
+  ipcRenderer.on("render", (sender, state) => {
+    render(createElement(require("./jsx/root"), state), document.getElementById("root"));
+  });
+  </script>
+</html>
